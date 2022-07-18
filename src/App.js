@@ -1,17 +1,16 @@
-import Searchbar from "./Searchbar";
-import WeatherNow from "./WeatherNow";
-import Temps from "./Temps";
-import Footer from "./Footer";
+import React from "react";
+import Weather from "./Weather";
 import "./App.css";
-export default function App() {
+
+function App() {
   return (
-    <>
-      <div className="App">
-        <Searchbar />
-        <WeatherNow />
-      </div>
-      <Temps />
-      <Footer />
-    </>
+    <div className="App">
+      <header className="App-header">
+        <h1>Hello world</h1>
+        <Weather />
+      </header>
+    </div>
   );
 }
+
+export default App;
