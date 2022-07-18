@@ -1,13 +1,20 @@
 import React from "react";
-import Weather from "./Weather";
+import Searchbar from "./Searchbar";
+import Temps from "./Temps";
+import WeatherNow from "./WeatherNow";
+import Footer from "./Footer";
+
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Hello world</h1>
-        <Weather city="Toyko" />
+        <Searchbar />
+        <WeatherNow />
+
+        <Temps />
+        <Footer />
       </header>
     </div>
   );
