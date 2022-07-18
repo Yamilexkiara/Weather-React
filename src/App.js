@@ -1,4 +1,5 @@
 import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 import Searchbar from "./Searchbar";
 import Temps from "./Temps";
 import WeatherNow from "./WeatherNow";
