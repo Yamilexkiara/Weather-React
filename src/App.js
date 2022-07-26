@@ -10,13 +10,18 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Searchbar />
-        <WeatherNow />
+      <div className="weather-app-wrapper">
+        <header className="App-header">
+          <Searchbar />
+          <WeatherNow />
 
-        <Temps />
+          <Temps />
+        </header>
+      </div>
+
+      <div>
         <Footer />
-      </header>
+      </div>
     </div>
   );
 }

@@ -1,65 +1,64 @@
 body {
-  background-color: rgb(239, 243, 245);
-}
-.container .search {
-  display: block;
+  text-align: center;
 }
 h1 {
   text-align: center;
 }
-h2 {
-  text-align: center;
-  color: rgb(30, 27, 63);
-}
-h3 {
-  text-align: left;
-  padding: 5px;
-}
 
-img {
-  display: block;
-  margin: 0 auto;
-  padding: 10px 5px;
-}
-li {
-  text-align: left;
+.overview {
+  padding-left: 1px;
+  color: rgb(119, 116, 111);
   list-style-type: none;
-  border: 1px solid grey;
-  margin: 4px 10px;
-  padding-left: 30px;
-  padding: 10px;
+}
+.container {
+  list-style-type: none;
+  text-align: center;
+}
+.container-search {
+  padding-left: 90px;
 }
 
-button {
-  display: block;
-  position: relative;
-  margin: 10px;
-  border: rgb(161, 154, 154) solid;
-  border-radius: 20px;
-  box-shadow: 5px 5px 10px rgb(63, 62, 62);
+.col-4 {
+  padding-left: 10px;
+  padding-bottom: 15px;
 }
-.weathernow {
-  border: 4px solid;
-  border-radius: 40px 20px;
-  border-color: rgb(161, 154, 154);
-  padding: 10px;
+.weather-app-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #dadeda;
+  border-radius: 10px;
 }
-.dayweather {
-  border: 2px solid;
-  border-color: rgb(161, 154, 154);
-  margin: 12px 10px;
+.weather-temperature .active {
+  color: black;
+  cursor: default;
 }
-.container .highlow {
+
+.weather-temperature .active:hover {
+  text-decoration: none;
+}
+.weather-forecast-temperature-min {
+  color: rgb(119, 116, 111);
+}
+
+#wind-humid {
+  list-style-type: none;
+  margin: auto;
+  color: rgb(119, 116, 111);
+}
+
+#finalLink {
+  list-style-type: none;
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  margin: 15px;
-  border: 2px solid;
 }
-.col-2 {
-  border: 2px solid;
-  border-radius: 20px;
-  margin: 20px;
-  text-align: center;
-  padding: 3px 1px;
+#fahrenheit-link {
+  color: black;
+  text-decoration: none;
+}
+#celcius-link {
+  color: black;
+  text-decoration: none;
+}
+#temperature {
+  font-size: 50px;
 }
