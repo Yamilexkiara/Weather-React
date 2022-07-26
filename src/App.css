@@ -1,13 +1,28 @@
 body {
   text-align: center;
+  background-color: rgb(241, 250, 246);
 }
 h1 {
   text-align: center;
+  padding-top: 20px;
 }
-
+input {
+  padding-right: 90px;
+  margin-right: 10px;
+}
+button {
+  margin-right: 10px;
+}
+form {
+  display: inline-flex;
+}
+.search-form {
+  padding-left: 0;
+  text-align: left;
+}
 .overview {
   padding-left: 1px;
-  color: rgb(119, 116, 111);
+
   list-style-type: none;
 }
 .container {
@@ -15,19 +30,22 @@ h1 {
   text-align: center;
 }
 .container-search {
-  padding-left: 90px;
+  padding: 0;
+  margin: auto;
 }
 
 .col-4 {
   padding-left: 10px;
   padding-bottom: 15px;
 }
+
 .weather-app-wrapper {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #dadeda;
   border-radius: 10px;
+  background-color: rgb(255, 255, 255);
 }
 .weather-temperature .active {
   color: black;
