@@ -19,6 +19,9 @@ form {
 ul {
   list-style-type: none;
 }
+canvas {
+  padding-left: 30px;
+}
 .search-form {
   padding-left: 0;
   text-align: left;
@@ -61,7 +64,9 @@ ul {
 .weather-forecast-temperature-min {
   color: rgb(119, 116, 111);
 }
-
+.weather-temperature {
+  padding-left: 40px;
+}
 #wind-humid {
   list-style-type: none;
   margin: auto;
@@ -82,4 +87,7 @@ ul {
 }
 #temperature {
   font-size: 50px;
+}
+#formatteddate {
+  text-align: left;
 }

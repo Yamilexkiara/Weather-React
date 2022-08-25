@@ -1,11 +1,11 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
-
+import WeatherIcon from "./WeatherIcon";
 export default function WeatherInfo(props) {
   return (
     <div className="WeatherInfo">
       <h1>{props.data.city}</h1>
-      <ul>
+      <ul id="formatteddate">
         <li>
           <FormattedDate date={props.data.date} />
         </li>
@@ -13,32 +13,28 @@ export default function WeatherInfo(props) {
       </ul>
       <div className="row">
         <div className="col-6">
-          <img
-            src={props.data.iconUrl}
-            alt={props.data.description}
-            id="icon"
-            className="float-left"
-          />
-          <span className="weather-temperature" id="temperature">
-            {Math.round(props.data.temperature)}
-          </span>
-          <span className="units">
-            {""}
-            <a href="-#" id="fahrenheit-link" className="active">
-              {" "}
+          <div>
+            <WeatherIcon code={props.data.icon} />
+            <span className="weather-temperature" id="temperature">
+              {Math.round(props.data.temperature)}
+            </span>
+            <span className="units">
               {""}
-              °F
-            </a>
-            |
-            <a href="-#" id="celcius-link">
-              {" "}
+              <a href="-#" id="fahrenheit-link" className="active">
+                {" "}
+                {""}
+                °F
+              </a>
+              |
+              <a href="-#" id="celcius-link">
+                {" "}
+                {""}
+                °C
+              </a>
               {""}
-              °C
-            </a>
-            {""}
-          </span>
+            </span>
+          </div>
         </div>
-
         <div className="col-4">
           <ul id="wind-humid">
             <li>
