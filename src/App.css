@@ -16,6 +16,9 @@ button {
 form {
   display: inline-flex;
 }
+ul {
+  list-style-type: none;
+}
 .search-form {
   padding-left: 0;
   text-align: left;
