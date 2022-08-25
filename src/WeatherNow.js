@@ -1,55 +1,82 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
+import WeatherInfo from "./WeatherInfo";
 import "./App.css";
-export default function WeatherNow() {
-  return (
-    <div className="weatherNow">
-      <h1 id="city">New York</h1>
-      <ul className="overview">
-        <li id="date">Saturday, 02:17 pm</li>
-        <li id="description">few clouds</li>
-      </ul>
-      <div className="row">
-        <div className="col-6">
-          <img
-            src="http://openweathermap.org/img/wn/02d@2x.png"
-            alt="few clouds"
-            id="icon"
-            className="float-left"
-          />
-          <span className="weather-temperature" id="temperature">
-            68
-          </span>
-          <span className="units">
-            {""}
-            <a href="-#" id="fahrenheit-link" className="active">
-              {" "}
-              {""}
-              °F
-            </a>
-            |
-            <a href="-#" id="celcius-link">
-              {" "}
-              {""}
-              °C
-            </a>
-            {""}
-          </span>
-        </div>
+export default function WeatherNow(props) {
+  const [weatherData, setWeatherData] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
+  function handleResponse(response) {
+    setWeatherData({
+      ready: true,
+      coordinates: response.data.coord,
+      temperature: response.data.main.temp,
+      humidity: response.data.main.humidity,
+      date: new Date(response.data.dt * 1000),
+      description: response.data.weather[0].description,
+      iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      wind: response.data.wind.speed,
+      city: response.data.name,
+    });
+  }
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
 
-        <div className="col-4">
-          <ul id="wind-humid">
-            <li>
-              Precipitation: <span id="precipitation">17</span>%
-            </li>
-            <li>
-              Wind: <span id="wind">15</span> mph
-            </li>
-            <li>
-              Humidty: <span id="humidity">41</span>%
-            </li>
-          </ul>
+  function search() {
+    const apiKey = "4c44a8e9b1dcd5f7069fde1bbd1dfd12";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+  if (weatherData.ready) {
+    return (
+      <div className="weatherNow">
+        <div className="container">
+          <div className="weather-app">
+            <nav className="navbar">
+              <div className="container-search">
+                <a href="navbar-brand">{""}</a>
+                <form
+                  className="search-form"
+                  id="search-form"
+                  onSubmit={handleSubmit}
+                >
+                  <input
+                    className="searchInput"
+                    type="search"
+                    name="city"
+                    id="city-input"
+                    placeholder="Enter a city"
+                    autocomplete="off"
+                    autoFocus="on"
+                    onChange={handleCityChange}
+                  />
+                  <button
+                    className="btn btn-outline-success"
+                    type="submit"
+                    value="Search"
+                  >
+                    Search
+                  </button>
+                  <button
+                    className="btn btn-success w-300"
+                    id="current-location-button"
+                  >
+                    Current
+                  </button>
+                </form>
+              </div>
+            </nav>
+          </div>
         </div>
+        <WeatherInfo data={weatherData} />
       </div>
-    </div>
-  );
+    );
+  } else {
+    search();
+    return "Loading...";
+  }
 }

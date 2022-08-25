@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Searchbar from "./Searchbar";
+
 import Temps from "./Temps";
 import WeatherNow from "./WeatherNow";
 import Footer from "./Footer";
@@ -12,8 +12,7 @@ function App() {
     <div className="App">
       <div className="weather-app-wrapper">
         <header className="App-header">
-          <Searchbar />
-          <WeatherNow />
+          <WeatherNow defaultCity="New York" />
 
           <Temps />
         </header>
