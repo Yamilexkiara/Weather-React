@@ -7,7 +7,7 @@ export default function FormattedDate(props) {
     "Tuesday",
     "Wednesday",
     "Thursday",
-    "Frday",
+    "Friday",
     "Saturday",
   ];
   let day = Days[props.date.getDay()];
