@@ -27,7 +27,7 @@ export default function WeatherNow(props) {
   }
 
   function search() {
-    const apiKey = "4c44a8e9b1dcd5f7069fde1bbd1dfd12";
+    const apiKey = "bd3bb6534458ba51b48c49f5155745b6";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(handleResponse);
   }
