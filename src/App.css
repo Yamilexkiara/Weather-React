@@ -45,6 +45,9 @@ canvas {
   padding-left: 10px;
   padding-bottom: 15px;
 }
+.row {
+  size: 50px;
+}
 
 .weather-app-wrapper {
   max-width: 600px;
@@ -53,7 +56,9 @@ canvas {
   border: 1px solid #dadeda;
   border-radius: 10px;
   background-color: rgb(255, 255, 255);
+  display: inline-flex;
 }
+
 .weather-temperature .active {
   color: black;
   cursor: default;
@@ -67,6 +72,9 @@ canvas {
 }
 .weather-temperature {
   padding-left: 40px;
+}
+.WeatherUnit {
+  size: 40px;
 }
 #wind-humid {
   list-style-type: none;
@@ -86,8 +94,8 @@ canvas {
   color: black;
   text-decoration: none;
 }
-#Temperature {
-  font-size: 50px;
+#temperature-now {
+  color: red;
 }
 #formatteddate {
   text-align: left;
