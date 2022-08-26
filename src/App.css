@@ -94,9 +94,6 @@ canvas {
   color: black;
   text-decoration: none;
 }
-#temperature-now {
-  color: red;
-}
 #formatteddate {
   text-align: left;
 }
